@@ -1,0 +1,266 @@
+:root {
+  color-scheme: dark;
+  --background: #0b1020;
+  --surface: #121a30;
+  --surface-soft: #17213a;
+  --text: #f7f3e8;
+  --muted: #b7bfd3;
+  --accent: #ffe16b;
+  --accent-ink: #171309;
+  --line: rgba(255, 255, 255, 0.13);
+  --max-width: 72rem;
+  font-family:
+    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 85% 5%, rgba(66, 96, 190, 0.3), transparent 35rem),
+    var(--background);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+main,
+footer {
+  width: min(calc(100% - 2.5rem), var(--max-width));
+  margin-inline: auto;
+}
+
+.hero {
+  max-width: 58rem;
+  padding: clamp(5rem, 12vw, 9rem) 0 clamp(4rem, 9vw, 7rem);
+}
+
+.eyebrow {
+  margin: 0 0 1.5rem;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 13ch;
+  margin-bottom: 1.6rem;
+  font-size: clamp(3rem, 8vw, 6.9rem);
+  font-weight: 760;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.lede {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+  color: var(--muted);
+  font-size: clamp(1.14rem, 2.3vw, 1.45rem);
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem 1.5rem;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3.4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.65rem;
+  color: var(--accent-ink);
+  background: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.7rem 2rem rgba(255, 225, 107, 0.16);
+}
+
+.button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.text-link {
+  font-weight: 700;
+}
+
+.requirement {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.details article {
+  padding: 2.5rem clamp(1.2rem, 3vw, 2.4rem) 2.7rem;
+}
+
+.details article:first-child {
+  padding-left: 0;
+}
+
+.details article + article {
+  border-left: 1px solid var(--line);
+}
+
+.number {
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.details article > p:last-child,
+.document section p {
+  color: var(--muted);
+}
+
+.notice {
+  margin: 2rem 0 5rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: var(--surface);
+}
+
+.notice p {
+  margin: 0;
+  color: var(--muted);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.8rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.4rem;
+}
+
+.document {
+  max-width: 48rem;
+  padding: clamp(3rem, 9vw, 6rem) 0;
+}
+
+.document h1 {
+  max-width: 12ch;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+}
+
+.document section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.document section h2 {
+  font-size: 1.45rem;
+}
+
+.document code {
+  padding: 0.12rem 0.35rem;
+  border-radius: 0.25rem;
+  background: var(--surface-soft);
+  color: var(--text);
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 4rem;
+  color: var(--muted);
+}
+
+.updated {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 44rem) {
+  main,
+  footer {
+    width: min(calc(100% - 1.5rem), var(--max-width));
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .details article,
+  .details article:first-child {
+    padding: 2rem 0;
+  }
+
+  .details article + article {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}
