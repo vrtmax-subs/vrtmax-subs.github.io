@@ -1,7 +1,18 @@
 {
   "addons": {
     "vrtmax-english-subtitles@vrtmax-subs.github.io": {
-      "updates": []
+      "updates": [
+        {
+          "version": "1.4.0",
+          "update_link": "https://vrtmax-subs.github.io/firefox/vrtmax-english-subtitles.xpi",
+          "update_hash": "sha256:b7dc8b171597e216321ae27ec17cdefdd3a71869a719ce484ab46ed42d21d621",
+          "applications": {
+            "gecko": {
+              "strict_min_version": "140.0"
+            }
+          }
+        }
+      ]
     }
   }
 }
