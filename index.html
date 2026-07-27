@@ -22,15 +22,23 @@
         <div class="actions">
           <a
             class="button"
+            data-browser="firefox"
             href="/firefox/vrtmax-english-subtitles.xpi"
             type="application/x-xpinstall"
           >
             Add to Firefox
           </a>
+          <a
+            class="button"
+            data-browser="chrome"
+            href="https://chromewebstore.google.com/detail/jocpmikbplnofjchcneaoggklegjaeif?utm_source=item-share-cb"
+          >
+            Add to Chrome
+          </a>
         </div>
         <p class="requirement">
           Requires Firefox 140 or newer on desktop, or Firefox 142 or newer on
-          Android.
+          Android. The same extension also supports Chrome.
         </p>
       </section>
 
@@ -75,5 +83,19 @@
         <a href="https://github.com/vrtmax-subs/extension/issues">Support</a>
       </nav>
     </footer>
+    <script>
+      const userAgent = navigator.userAgent;
+      const browser = /\bFirefox\//.test(userAgent)
+        ? "firefox"
+        : /\b(?:Chrome|Chromium)\//.test(userAgent)
+          ? "chrome"
+          : null;
+
+      if (browser) {
+        document.querySelectorAll("[data-browser]").forEach((button) => {
+          button.hidden = button.dataset.browser !== browser;
+        });
+      }
+    </script>
   </body>
 </html>
